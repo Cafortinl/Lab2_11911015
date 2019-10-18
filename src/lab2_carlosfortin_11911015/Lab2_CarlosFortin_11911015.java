@@ -37,6 +37,7 @@ public class Lab2_CarlosFortin_11911015 {
                                "9. Salir",
                                "Opcion ingresada: ");
             opcion=leer.nextInt();
+            System.out.println();
             
             switch(opcion)
             {
@@ -238,7 +239,10 @@ public class Lab2_CarlosFortin_11911015 {
                     break;
                     
                 case 8:
-                    opcion=1+rand.nextInt(8);
+                    if(usuario!="leobanegas" && contra!=99)
+                        System.out.println("Primero debe usar el log in");
+                    else
+                        opcion=1+rand.nextInt(8);
                     break;
                     
                 case 9:
@@ -248,6 +252,7 @@ public class Lab2_CarlosFortin_11911015 {
                 default:
                     System.out.println("La opcion ingresada no es valida");
                     break;
+                    
             }//fin switch
             
             System.out.println();
