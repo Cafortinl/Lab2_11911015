@@ -149,11 +149,7 @@ public class Lab2_CarlosFortin_11911015 {
                         System.out.println("Primero debe usar el LogIn");
                     else
                     {
-                        String salida="";
-                        for (Object t : universidades) {
-                            salida+=universidades.indexOf(t)+"- "+t+"\n";
-                        }
-                        System.out.println(salida);
+                        listUniversities(universidades);
                     }
                     break;
                   
@@ -169,33 +165,67 @@ public class Lab2_CarlosFortin_11911015 {
                             System.out.println("La posicion seleccionada no existe");
                         else
                         {
-                            System.out.print("Ingrese el nombre: ");
-                            leer.nextLine();
-                            nombre=leer.nextLine();
-                            ((Universidad)(universidades.get(pos3))).setNombre(nombre);
-                            System.out.print("Ingrese el nombre del rector: ");
-                            rector=leer.nextLine();
-                            ((Universidad)(universidades.get(pos3))).setRector(rector);
-                            System.out.print("Ingrese la sucursal: ");
-                            sucursal=leer.nextLine();
-                            ((Universidad)(universidades.get(pos3))).setSucursal(sucursal);
-                            System.out.print("Ingrese el año de fundacion: ");
-                            año=leer.nextInt();
-                            ((Universidad)(universidades.get(pos3))).setAño(año);
-                            System.out.print("Ingrese el numero de maestros: ");
-                            maestros=leer.nextInt();
-                            ((Universidad)(universidades.get(pos3))).setMaestros(maestros);
-                            System.out.print("Ingrese el numero de estudiantes: ");
-                            estudiantes=leer.nextInt();
-                            ((Universidad)(universidades.get(pos3))).setEstudiantes(estudiantes);
-                            System.out.print("Ingrese el nivel de la universidad, 1 para publica y 2 para privada: ");
-                            nivel=leer.nextInt();
-                            while(nivel!=1 && nivel!=2)
+                            System.out.printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n","Ingrese una opcion",
+                                                             "1-Cambiar nombre",
+                                                             "2-Cambiar nombre del rector",
+                                                             "3-Cambiar sucursal",
+                                                             "4-Cambiar año de fundacion",
+                                                             "5-Cambiar no. de maestros",
+                                                             "6-Cambiar no. de alumnos",
+                                                             "7-Cambiar nivel de la universidad");
+                            
+                            int opcion2=leer.nextInt();
+                            
+                            switch(opcion2)
                             {
-                                System.out.print("Solo se pueden ingresar dos tipos de niveles. Ingrese un nivel: ");
-                                nivel=leer.nextInt();
+                                case 1:
+                                    System.out.print("Ingrese el nombre: ");
+                                    leer.nextLine();
+                                    nombre=leer.nextLine();
+                                    ((Universidad)(universidades.get(pos3))).setNombre(nombre);
+                                    break;
+                                
+                                case 2:
+                                    System.out.print("Ingrese el nombre del rector: ");
+                                    rector=leer.nextLine();
+                                    ((Universidad)(universidades.get(pos3))).setRector(rector);
+                                    break;
+                                    
+                                case 3:
+                                    System.out.print("Ingrese la sucursal: ");
+                                    sucursal=leer.nextLine();
+                                    ((Universidad)(universidades.get(pos3))).setSucursal(sucursal);
+                                    break;
+                                    
+                                case 4:
+                                    System.out.print("Ingrese el año de fundacion: ");
+                                    año=leer.nextInt();
+                                    ((Universidad)(universidades.get(pos3))).setAño(año);
+                                    break;
+                                    
+                                case 5:
+                                    System.out.print("Ingrese el numero de maestros: ");
+                                    maestros=leer.nextInt();
+                                    ((Universidad)(universidades.get(pos3))).setMaestros(maestros);
+                                    break;
+                                    
+                                case 6:
+                                    System.out.print("Ingrese el numero de estudiantes: ");
+                                    estudiantes=leer.nextInt();
+                                    ((Universidad)(universidades.get(pos3))).setEstudiantes(estudiantes);
+                                    break;
+                                    
+                                case 7:
+                                    System.out.print("Ingrese el nivel de la universidad, 1 para publica y 2 para privada: ");
+                                    nivel=leer.nextInt();
+                                    while(nivel!=1 && nivel!=2)
+                                    {
+                                        System.out.print("Solo se pueden ingresar dos tipos de niveles. Ingrese un nivel: ");
+                                        nivel=leer.nextInt();
+                                    }
+                                    ((Universidad)(universidades.get(pos3))).setNivel(nivel);
+                                    break;
                             }
-                            ((Universidad)(universidades.get(pos3))).setNivel(nivel);
                             
                         }
                     }
@@ -255,7 +285,7 @@ public class Lab2_CarlosFortin_11911015 {
                                 ((Universidad)z).setNivel(3);
                         }
                         ((Universidad)universidades.get(uni)).setNivel(5);
-                        
+                        listUniversities(universidades);
                     }
                         
                     break;
@@ -276,5 +306,12 @@ public class Lab2_CarlosFortin_11911015 {
         
     }//fin main
 
+    public static void listUniversities(ArrayList universidades){
+        String salida="";
+        for (Object t : universidades) {
+            salida+=universidades.indexOf(t)+"- "+t+"\n";
+        }
+        System.out.println(salida);
+    }
     
 }
