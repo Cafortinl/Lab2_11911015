@@ -145,11 +145,16 @@ public class Lab2_CarlosFortin_11911015 {
                     break;
                     
                 case 5:
-                    String salida="";
-                    for (Object t : universidades) {
-                        salida+=universidades.indexOf(t)+"- "+t+"\n";
+                    if(usuario!="leobanegas" && contra!=99)
+                        System.out.println("Primero debe usar el LogIn");
+                    else
+                    {
+                        String salida="";
+                        for (Object t : universidades) {
+                            salida+=universidades.indexOf(t)+"- "+t+"\n";
+                        }
+                        System.out.println(salida);
                     }
-                    System.out.println(salida);
                     break;
                   
                 case 6:
@@ -165,6 +170,7 @@ public class Lab2_CarlosFortin_11911015 {
                         else
                         {
                             System.out.print("Ingrese el nombre: ");
+                            leer.nextLine();
                             nombre=leer.nextLine();
                             ((Universidad)(universidades.get(pos3))).setNombre(nombre);
                             System.out.print("Ingrese el nombre del rector: ");
@@ -260,5 +266,6 @@ public class Lab2_CarlosFortin_11911015 {
         }//fin while
         
     }//fin main
+
     
 }
