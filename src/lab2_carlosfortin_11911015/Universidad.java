@@ -16,6 +16,8 @@ public class Universidad {
     private int n_estudiantes;
     private double costo;
     private String nivel;
+    private int nacional=0;
+    private int nivelint;
     
     //Constructores
     public Universidad(){
@@ -34,11 +36,13 @@ public class Universidad {
         {
             this.nivel="Publica";
             costo=0;
+            nivelint=nivel;
         }
         else if(nivel==2)
         {
             this.nivel="Privada";
             costo=6000;
+            nivelint=nivel;
         }
     }
     
@@ -76,22 +80,32 @@ public class Universidad {
         {
             case 1:
                 this.nivel="Publica";
+                this.costo=0;
+                this.nivelint=nivel;
                 break;
                 
             case 2:
                 this.nivel="Privada";
+                this.costo=6000;
+                this.nivelint=nivel;
                 break;
                 
             case 3:
                 this.nivel="Publica Prestigiosa";
+                this.costo=200;
+                this.nivelint=nivel;
                 break;
                 
             case 4:
                 this.nivel="Privada Prestigiosa";
+                this.costo=12000;
+                this.nivelint=nivel;
                 break;
                 
             case 5:
                 this.nivel="Nacional";
+                this.costo=500;
+                this.nivelint=nivel;
                 break;
         }
     }
@@ -126,6 +140,10 @@ public class Universidad {
     
     public String getNivel(){
         return nivel;
+    }
+    
+    public int getNivelInt(){
+        return nivelint;
     }
     
     //Metodos Administrativos
