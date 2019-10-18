@@ -9,8 +9,10 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.Random;
 public class Lab2_CarlosFortin_11911015 {
 
+    public static Random rand=new Random();
     public static Scanner leer=new Scanner(System.in);
     public static void main(String[] args) {
         // TODO code application logic here
@@ -130,11 +132,11 @@ public class Lab2_CarlosFortin_11911015 {
                                     break;
                                     
                                 case 4:
-                                    System.out.print("La universidad ya esta en el nivel mas alto");
+                                    System.out.println("La universidad ya esta en el nivel mas alto");
                                     break;
                                     
                                 case 5:
-                                    System.out.print("La universidad ya esta en el nivel mas alto");
+                                    System.out.println("La universidad ya esta en el nivel mas alto");
                                     break;
                             }
                         }
@@ -193,11 +195,50 @@ public class Lab2_CarlosFortin_11911015 {
                     break;
                     
                 case 7:
-                    
+                    if(usuario!="leobanegas" && contra!=99)
+                        System.out.println("Primero debe usar el log in");
+                    else
+                    {
+                        System.out.println("Ingrese la posicion a modificar: ");
+                        int pos3=leer.nextInt();
+                        
+                        if(pos3>universidades.size()-1)
+                            System.out.println("La posicion seleccionada no existe");
+                        else
+                        {
+                            int niv2=((Universidad)(universidades.get(pos3))).getNivelInt();
+                            
+                            switch(niv2)
+                            {
+                                case 1:
+                                    universidades.remove(pos3);
+                                    break;
+                                    
+                                case 2:
+                                    universidades.remove(pos3);
+                                    break;
+                                   
+                                case 3:
+                                    niv2=1;
+                                    ((Universidad)(universidades.get(pos3))).setNivel(niv2);
+                                    break;
+                                    
+                                case 4:
+                                    niv2=2;
+                                    ((Universidad)(universidades.get(pos3))).setNivel(niv2);
+                                    break;
+                                    
+                                case 5:
+                                    niv2=3;
+                                    ((Universidad)(universidades.get(pos3))).setNivel(niv2);
+                                    break;
+                            }
+                        }
+                    }
                     break;
                     
                 case 8:
-                    
+                    opcion=1+rand.nextInt(8);
                     break;
                     
                 case 9:
@@ -207,10 +248,12 @@ public class Lab2_CarlosFortin_11911015 {
                 default:
                     System.out.println("La opcion ingresada no es valida");
                     break;
-            }
+            }//fin switch
+            
+            System.out.println();
                                                                
-        }
+        }//fin while
         
-    }
+    }//fin main
     
 }

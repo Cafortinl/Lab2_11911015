@@ -16,7 +16,6 @@ public class Universidad {
     private int n_estudiantes;
     private double costo;
     private String nivel;
-    private int nacional=0;
     private int nivelint;
     
     //Constructores
