@@ -248,7 +248,16 @@ public class Lab2_CarlosFortin_11911015 {
                     if(usuario!="leobanegas" && contra!=99)
                         System.out.println("Primero debe usar el log in");
                     else
-                        opcion=1+rand.nextInt(8);
+                    {
+                        int uni=rand.nextInt(universidades.size()-1);
+                        for (Object z : universidades) {
+                            if(((Universidad)z).getNivelInt()==5)
+                                ((Universidad)z).setNivel(3);
+                        }
+                        ((Universidad)universidades.get(uni)).setNivel(5);
+                        
+                    }
+                        
                     break;
                     
                 case 9:
