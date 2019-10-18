@@ -22,15 +22,24 @@ public class Universidad {
         
     }
     
-    public Universidad(String nombre, String rector, String sucursal, int año, int maestros, int alumnos, double costo, String nivel){
+    public Universidad(String nombre, String rector, String sucursal, int año, int maestros, int alumnos, int nivel){
         this.nombre=nombre;
         this.rector=rector;
         this.sucursal=sucursal;
         this.año=año;
         n_maestros=maestros;
         n_estudiantes=alumnos;
-        this.costo=costo;
-        this.nivel=nivel;
+        
+        if(nivel==1)
+        {
+            this.nivel="Publica";
+            costo=0;
+        }
+        else if(nivel==2)
+        {
+            this.nivel="Privada";
+            costo=6000;
+        }
     }
     
     //Mutadores
@@ -62,8 +71,29 @@ public class Universidad {
         this.costo=costo;
     }
     
-    public void setNivel(String nivel){
-        this.nivel=nivel;
+    public void setNivel(int nivel){
+        switch(nivel)
+        {
+            case 1:
+                this.nivel="Publica";
+                break;
+                
+            case 2:
+                this.nivel="Privada";
+                break;
+                
+            case 3:
+                this.nivel="Publica Prestigiosa";
+                break;
+                
+            case 4:
+                this.nivel="Privada Prestigiosa";
+                break;
+                
+            case 5:
+                this.nivel="Nacional";
+                break;
+        }
     }
     
     public String getNombre(){
